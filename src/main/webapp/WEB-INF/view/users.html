@@ -25,15 +25,10 @@
             <td th:text="${user.userName}"></td>
             <td><a th:href="@{user-update/{id}(id=${user.id})}">Update</a></td>
             <td><a th:href="@{user-delete/{id}(id=${user.id})}">Delete</a></td>
-            <!--<td><a th:href="@{user-update/{id}(id=${user.id})}">Update</a></td>
-            <td><a th:href="@{users/{id}(id=${user.id})}">Delete</a></td>-->
         </tr>
         </tbody>
     </table>
 </div>
-<!--<a th:href="@{users/addNewUser}">Add</a>-->
-<!--<p><a href="/addNewUser">Add</a></p>-->
-<!--<p><a href="/user-create">Add</a></p>-->
 <a th:href="@{user-create}">Add</a>
 </body>
 </html>

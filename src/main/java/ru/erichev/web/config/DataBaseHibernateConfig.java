@@ -1,6 +1,5 @@
 package ru.erichev.web.config;
 
-import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -26,7 +25,6 @@ import java.util.Properties;
 @ComponentScan("ru.erichev.web")
 public class DataBaseHibernateConfig {
 
-    //@Resource
     private final Environment env;
 
     @Autowired
@@ -37,17 +35,15 @@ public class DataBaseHibernateConfig {
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-        em.setJpaVendorAdapter(getJpaVendorAdapter());                   //????
+        em.setJpaVendorAdapter(getJpaVendorAdapter());
         em.setDataSource(dataSource());
         em.setPackagesToScan("ru.erichev.web.entity");
-        //em.setPackagesToScan(env.getRequiredProperty("db.entity.package"));
-        //em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         em.setJpaProperties(getHibernateProperties());
         return em;
     }
 
     @Bean
-    public JpaVendorAdapter getJpaVendorAdapter() {                         //?????
+    public JpaVendorAdapter getJpaVendorAdapter() {
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
         return adapter;
     }
@@ -62,7 +58,6 @@ public class DataBaseHibernateConfig {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
-        //BasicDataSource ds = new BasicDataSource();
         ds.setUrl(env.getRequiredProperty("db.url"));
         ds.setDriverClassName(env.getRequiredProperty("db.driver"));
         ds.setUsername(env.getRequiredProperty("db.username"));
