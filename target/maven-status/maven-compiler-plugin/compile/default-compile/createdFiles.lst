@@ -1,0 +1,10 @@
+ru\erichev\web\config\ServletInitializer.class
+ru\erichev\web\controller\UserController.class
+ru\erichev\web\service\UserService.class
+ru\erichev\web\entity\User.class
+ru\erichev\web\service\UserServiceImpl.class
+ru\erichev\web\MainTest.class
+ru\erichev\web\config\DataBaseHibernateConfig.class
+ru\erichev\web\config\WebConfig.class
+ru\erichev\web\dao\UserDao.class
+ru\erichev\web\dao\UserDaoImpl.class
